@@ -1,0 +1,189 @@
+. Spring Basic
+
+· Spring IOC & DI
+
+· Spring JDBC
+
+· Spring AOP
+
+· Spring Web MVC
+
+
+what is spring?
+
+	
+	Rod johnson - interface21
+
+	faster
+
+	framework
+	
+	DI & IOC
+
+Spring IOC:
+
+	IOC- inversion of control
+		
+		spring creates the object and gives you
+
+		created by spring container
+		
+container- 
+		creates the object based on our needs not automatically, still with little config from 		dev side
+		
+		it also identifies or resolves the dependent object
+
+DI:
+
+	process of identifying the dependant object is called DI
+
+	DI - Dependency injection
+
+@Component
+class Car
+{	
+	@AutoWired
+	Engine engine;
+}
+@Component
+class  Engine{
+
+}
+
+
+	Car c=new Car();
+	Engine e=new Engine();
+	c.setEngine(e);
+	
+
+Conatiners - 2 containers
+
+Spring container/ IOC container / DI Container 
+
+BeanFactory Container - interface
+
+Application Context container - sub interface of Bean factory (not a direct descenanct) ---- important
+	
+
+
+what is the work of a container :
+	
+	* manage the life cycle of spring beans
+	* takes care of object
+
+Spring beans or components - classes we create in spring application (pojo class)
+
+
+Bean Factory 
+
+	its the core container of spring
+	is an interface
+	lazy instantiation
+	cannot read any resources on its own but with support of some spring IO class		
+	helps in creating obj
+	life cycle is managed
+	
+
+Application Context :
+		is an interface 
+		extends from Beanfactory (sub interface)
+		eager instantiation
+		can read any resources on its own
+		helps in creating obj
+		life cycle is managed
+		supports I18N
+			
+
+
+
+ref link:
+===============
+https://stackoverflow.com/questions/1612334/difference-between-dto-vo-pojo-javabeans
+
+https://docs.spring.io/spring-framework/docs/current/javadoc-api/
+
+
+
+dependencies needed: - basic spring core application
+
+	spring beans and spring core - jar needed
+
+
+<!-- https://mvnrepository.com/artifact/org.springframework/spring-core -->
+	
+
+
+<!-- https://mvnrepository.com/artifact/org.springframework/spring-beans -->
+<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-beans</artifactId>
+    <version>5.2.4.RELEASE</version>
+</dependency>
+
+
+
+or
+
+http://www.java2s.com/Code/Jar/s/Downloadspringbeans320releasejar.htm
+
+
+
+
+create a maven project
+
+add below lines in pom.xml under <properties> tag
+
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+
+
+this is for intimating we use 1.8 version java in any machine
+
+
+after this we have update the project by rgt clikcing project--> maven --> update proj
+
+ref:
+=====
+https://docs.spring.io/spring-framework/docs/3.0.x/spring-framework-reference/html/xsd-config.html
+
+
+
+
+
+
+
+
+
+
+
+emp1 and emp2 are reference names to pick our objects from container
+
+
+
+setter injection - setting the value thru setter methods from xml
+
+task 1 --
+
+what if employee is of scope singleton and address is of prototype, vice versa?
+identify the outcomes ? check whther outer scope is affecting inner scope or not?
+
+tomorrow:
+==========
+
+annotation  based config
+java config spring appl
+speing exp lang
+placeholderconfig
+spring jdbc
+
+
+
+
+
+
+
+
+
+
+
+
